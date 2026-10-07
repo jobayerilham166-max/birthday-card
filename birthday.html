@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="wisth=devise-width,initial-scale=1.0">
+<title> Happy Birthday </title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #8e44ad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white
+  }
+
+  .container {
+    text-align: center;
+    animation: appear 2s ease;
+  }
+
+  h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px white;
+    animation: glow 2s infinite alternate;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+
+  .best {
+    font-size: 25px;
+    margin-top: 25px;
+    animation: pulse 1.5s infinite;
+  }
+
+  /*Cake*/
+  .cake {
+    position: relative;
+    width: 260px;
+    height: 160px;
+    margin: auto;
+  }
+
+  .layer {
+    position: absolute;
+    left: 20px;
+    width: 220px;
+    height: 55px;
+    border-radius: 15px;
+    background: #8b4513;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .layer.top {
+    top: 45px;
+    background: #ffb6c1;
+  }
+
+  .layer.middle {
+    top: 85px;
+    background: #ff69b4;
+  }
+
+  .layer.bottom {
+    top: 125px;
+    background: #e75480;
+  }
+
+  .cream {
+    position: absolute;
+    top: 35px;
+    left: 25px;
+    width: 210px;
+    height: 25px;
+    background: white;
+    border-radius: 50%
+  }
+
+  /*Candle*/
+  .candle {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    width: 22px;
+    height: 50px;
+    background: #fff;
+    border-radius: 5px;
+  }
+
+  .flame {
+    position: absolute;
+    top: -28px;
+    left: 4px;
+    width: 15px;
+    height: 25px;
+    background: orange;
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: 0 0 20px yellow;
+    animation: flame 0.5 infinite alternate;
+  }
+
+  /*Confetti*/
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    animation: fall 5s liner infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+    }
+
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
+
+  @kyeframes flame {
+    form {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(1.25);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px white;
+    }
+
+    to {
+      text-shadow: 0 0 35px white;
+    }
+  }
+
+  @keyframes pulse {
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: scale(0.5)
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1)
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1> Happy Birthday </h1>
+
+    <h2> Dear ............ </h2>
+
+    <div class="cake">
+
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+
+      <div class="cream"></div>
+
+      <div class="layer top"></div>
+      <div class="layer middle"></div>
+      <div class="layer bottom"></div>
+
+    </div>
+
+  </div>
+
+  <div class="best">
+    Best Wishes For You
+    <br><br>
+    May your life alawayes be filed with <br>
+    happiness,love & beautiful moments
+  </div>
+
+  </div>
+
+  <script>
+
+    const colour = [
+      "#ffeb3b",
+      "00e5ff",
+      "#ff4081",
+      "#76ff03",
+      "#ffffff",
+      "#ff9800",
+    ];
+
+    for (let i = 0; i < 80; i++) {
+      const confetti = document.creatElememt("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.rendom() * 100 + "vw";
+      confetti.style.background =
+        colour[Math.floor(Math.random() * colors.length)];
+
+      confetti.style.animationDelay = Math.random() * 5 + "s";
+
+      confetti.style.animationDuration = (3 + Math.random() * 4) + "s";
+      docoment.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+
+</html>
